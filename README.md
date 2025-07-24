@@ -1,7 +1,7 @@
 # Objective 
 Develop an enterprise‑grade predictive‑analytics solution that ingests raw customer transactions, cleans and enriches them, and then forecasts each shopper’s likelihood of accepting an upcoming marketing offer. The goal is to sharpen targeting, cut acquisition costs, and materially boost incremental revenue across omnichannel retail campaigns while supporting real‑time decision flows enterprise‑wide.
 
-# Overview (50 words)
+# Overview
 We consolidated 2 240 customer records containing spend behaviour, channel preferences, demographics, and engagement timelines into a star‑schema lakehouse, executed exploratory analysis in Python, engineered 30 + features, balanced the classes via SMOTE, and trained an ensemble (logistic, SVC, KNN) deployed on Azure Databricks with MLflow‑powered monitoring for versioning and automated retraining.
 
 # Insights
