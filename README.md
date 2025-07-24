@@ -1,27 +1,35 @@
 # Objective 
-Develop an enterprise‑grade predictive‑analytics solution that ingests raw customer transactions, cleans and enriches them, and then forecasts each shopper’s likelihood of accepting an upcoming marketing offer. The goal is to sharpen targeting, cut acquisition costs, and materially boost incremental revenue across omnichannel retail campaigns while supporting real‑time decision flows enterprise‑wide.
+Develop an enterprise‑grade predictive‑analytics solution that ingests raw customer transaction data, cleans and enriches it, and then forecasts each shopper’s likelihood of purchasing a newly launched Gold Membership offer. The goal is to optimize campaign targeting, reduce outreach costs, and improve conversion rates during the year‑end promotional cycle.
 
 # Overview
-We consolidated 2 240 customer records containing spend behaviour, channel preferences, demographics, and engagement timelines into a star‑schema lakehouse, executed exploratory analysis in Python, engineered 30 + features, balanced the classes via SMOTE, and trained an ensemble (logistic, SVC, KNN) deployed on Azure Databricks with MLflow‑powered monitoring for versioning and automated retraining.
+Processed 2,240 customer records covering spending behavior, purchase recency, channel interaction, demographics, and complaint history. Conducted exploratory data analysis (EDA) using Python (pandas, Seaborn, matplotlib), engineered 30+ features, handled class imbalance using SMOTE, and deployed a soft-voting ensemble model (Logistic Regression, KNN, SVC). Workflow executed in Google Colab with full version control on GitHub and visualization support in Excel.
+
+Key steps:
+
+-Converted birth year into customer age for interpretable segmentation.
+-Created new metrics like total spend, total purchases, and web visits.
+-Removed multicollinear and low-importance features via correlation analysis and VIF scores.
+-Scaled numeric data and one-hot encoded categorical features.
+-Balanced classes to handle only 15% positive response using oversampling techniques.
 
 # Insights
-1. Recency drives response – customers who purchased within the last 30 days convert at over twice the baseline rate.
+1.Recency drives response – customers who purchased within the past 35 days were significantly more likely to opt in, versus an average of 51 days for non-members.
 
-2. Premium‑category spend matters – the top decile of Wine & Meat purchasers shows a 47 % uplift in campaign acceptance.
+2.Education level influence – customers with PhDs showed a higher conversion tendency, suggesting targeted education-based segmentation may enhance ROI.
 
-3. Digital engagement pays off – shoppers with ≥ 4 web visits a month are 31 % likelier to respond than store‑only patrons.
+3.High-spend offsets low activity – shoppers with a long inactivity period still converted when their average order value was high (≥ $50).
 
-4. High‑value demographics – married graduates aged 35‑55 deliver the highest CLV and response propensity.
+4.Online activity signals intent – frequent web visitors (≥ 4/month) were more inclined to purchase the membership.
 
-5. Income–family interaction – high‑income households without teens respond 22 % above average, whereas similar‑income families with teens under‑index by 9 %.
+5.Complaint behavior negligible – only 1% of customers had prior complaints, suggesting minimal impact from negative experiences
 
 # Conclusions / Recommendations
-1. Precision targeting – route propensity scores into the marketing‑automation engine and limit offers to the top 30 % scorers, aiming for a 25 % lift in incremental revenue.
+1.Targeted outreach – deploy propensity scores into the calling strategy to focus only on the top 30% most likely responders, cutting down operational costs.
 
-2. Dynamic offer design – bundle premium Wine & Meat items for high‑spend customers; A/B‑test 10 % vs 15 % discounts and track lift via barcode attribution.
+2.Tailored messaging – prioritize digital-first customers and recent shoppers with personalized messaging; integrate purchase value as a driver for upsell.
 
-3. Omnichannel triggers – fire push notifications within 15 minutes of a qualifying web browse to capitalise on the more responsive digital cohort.
+3.Bundle and upsell – promote Wine & Meat premium bundles to high-spend customers; test price anchoring with $999 vs $499 offers for perceived value.
 
-4. Lifecycle controls – institute a recency‑driven drip programme that reduces discount depth after 90 days of inactivity, preserving margin while reactivating lapsed shoppers.
+4.Digital nudges – trigger reminder calls or push notifications post web visits, especially when paired with limited-time offers.
 
-5. Continuous improvement – enforce an MLOps cadence with drift dashboards and monthly retraining; hold the model to ≤ 15 % MAPE and embed insights in quarterly business reviews to inform inventory and staffing plans.
+5.Sustain improvements – establish MLflow-based model monitoring for version control, schedule monthly retraining, and feed learnings into quarterly performance reviews to refine campaign strategies and budget allocations
