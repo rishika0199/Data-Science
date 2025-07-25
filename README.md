@@ -10,11 +10,11 @@ Develop an enterprise‑grade predictive‑analytics solution that ingests raw c
 Processed 2,240 customer records covering spending behavior, purchase recency, channel interaction, demographics, and complaint history. Conducted exploratory data analysis (EDA) using Python (pandas, Seaborn, matplotlib), engineered 30+ features, handled class imbalance using SMOTE, and deployed a soft-voting ensemble model (Logistic Regression, KNN, SVC). Workflow executed in Google Colab with full version control on GitHub and visualization support in Excel.
 
 Key steps:
--Converted birth year into customer age for interpretable segmentation. <br>
--Created new metrics like total spend, total purchases, and web visits. <br>
--Removed multicollinear and low-importance features via correlation analysis and VIF scores. <br>
--Scaled numeric data and one-hot encoded categorical features. <br>
--Balanced classes to handle only 15% positive response using oversampling techniques. <br>
+* Converted birth year into customer age for interpretable segmentation. <br>
+* Created new metrics like total spend, total purchases, and web visits. <br>
+* Removed multicollinear and low-importance features via correlation analysis and VIF scores. <br>
+* Scaled numeric data and one-hot encoded categorical features. <br>
+* Balanced classes to handle only 15% positive response using oversampling techniques. <br>
 
 # Insights
 1. Recency drives response – customers who purchased within the past 35 days were significantly more likely to opt in, versus an average of 51 days for non-members.
